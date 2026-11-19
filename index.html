@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- WEBSITE 17 - UI/UX DESIGNER PORTFOLIO -->
+		<title>
+			Designer
+		</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: 'DM Sans', sans-serif;
+				background: #f8f6f1;
+				color: #24232c;
+			}
+
+			h1, h2, h3, .display-font {
+				font-family: 'Syne', sans-serif;
+			}
+
+			.hero-title {
+				animation: revealUp 1s ease both;
+			}
+
+			.hero-description {
+				animation: revealUp 1s ease .2s both;
+			}
+
+			.hero-visual {
+				animation: revealUp 1s ease .4s both;
+			}
+
+			.float-card {
+				animation: float 5s ease-in-out infinite;
+			}
+
+			.project-card {
+				transition: transform .5s ease, box-shadow .5s ease;
+			}
+
+			.project-card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 24px 50px rgba(38, 30, 60, .12);
+			}
+
+			.project-image {
+				transition: transform .7s cubic-bezier(.2,.8,.2,1);
+			}
+
+			.project-card:hover .project-image {
+				transform: scale(1.06);
+			}
+
+			.round-button {
+				transition: transform .3s ease, background .3s ease, color .3s ease, box-shadow .3s ease;
+			}
+
+			.round-button:hover {
+				transform: translateY(-4px) scale(1.03);
+				box-shadow: 0 12px 25px rgba(36, 35, 44, .15);
+			}
+
+			.service-card {
+				transition: transform .4s ease, background .4s ease;
+			}
+
+			.service-card:hover {
+				transform: translateY(-8px);
+				background: #e8e1ff;
+			}
+
+			.nav-link {
+				position: relative;
+			}
+
+			.nav-link::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 0;
+				height: 2px;
+				background: #ff735c;
+				transition: width .3s ease;
+			}
+
+			.nav-link:hover::after {
+				width: 100%;
+			}
+
+			.about-image {
+				transition: transform .6s ease;
+			}
+
+			.about-image:hover {
+				transform: rotate(-2deg) scale(1.025);
+			}
+
+			.reveal {
+				animation: revealUp .9s ease both;
+			}
+
+			@keyframes revealUp {
+				from {
+					opacity: 0;
+					transform: translateY(35px);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes float {
+				0%, 100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-12px);
+				}
+			}
+
+			@keyframes rotateSlow {
+				from {
+					transform: rotate(0deg);
+				}
+
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			.rotating-shape {
+				animation: rotateSlow 18s linear infinite;
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				*, *::before, *::after {
+					animation-duration: .01ms !important;
+					animation-iteration-count: 1 !important;
+					scroll-behavior: auto !important;
+					transition-duration: .01ms !important;
+				}
+			}
+		</style>
+	</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="px-6 lg:px-16 py-6">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+
+            <a href="#" class="text-2xl font-extrabold tracking-tight display-font">
+                pixelora<span class="text-[#ff735c]">®</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-10 text-sm font-semibold text-gray-600">
+                <a href="#work" class="nav-link hover:text-black transition">Work</a>
+                <a href="#about" class="nav-link hover:text-black transition">About</a>
+                <a href="#services" class="nav-link hover:text-black transition">Services</a>
+                <a href="#contact" class="nav-link hover:text-black transition">Contact</a>
+            </div>
+
+            <a href="#contact"
+                class="round-button hidden sm:inline-flex items-center gap-3 bg-[#24232c] text-white px-6 py-3 rounded-full text-sm font-semibold">
+                Let's Talk
+                <span class="text-lg">↗</span>
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <main>
+
+        <section class="px-6 lg:px-16 pt-16 pb-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                    <div>
+
+                        <div class="hero-title inline-flex items-center gap-2 bg-[#e8e1ff] text-[#6651a5] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8">
+                            <span class="w-2 h-2 bg-[#ff735c] rounded-full"></span>
+                            Independent Digital Designer
+                        </div>
+
+                        <h1 class="hero-title text-6xl sm:text-7xl lg:text-[88px] leading-[.98] font-extrabold tracking-[-5px]">
+                            Design that
+                            <span class="block text-[#8d78cf]">feels like</span>
+                            <span class="block">magic<span class="text-[#ff735c]">.</span></span>
+                        </h1>
+
+                        <p class="hero-description text-gray-500 text-base sm:text-lg leading-8 max-w-lg mt-8">
+                            I create thoughtful digital experiences that bring
+                            brands closer to people through meaningful design,
+                            clear thinking and delightful interactions.
+                        </p>
+
+                        <div class="hero-description flex flex-wrap items-center gap-4 mt-10">
+
+                            <a href="#work"
+                                class="round-button bg-[#ff735c] text-white px-8 py-4 rounded-full font-bold text-sm inline-flex items-center gap-3">
+                                Explore My Work
+                                <span class="text-lg">↗</span>
+                            </a>
+
+                            <a href="#about"
+                                class="round-button border border-gray-300 px-8 py-4 rounded-full font-bold text-sm hover:bg-[#24232c] hover:text-white">
+                                About Me
+                            </a>
+
+                        </div>
+
+                        <div class="flex items-center gap-10 mt-16">
+
+                            <div>
+                                <h3 class="text-3xl font-extrabold display-font">06<span class="text-[#ff735c]">+</span></h3>
+                                <p class="text-xs text-gray-500 mt-1">Years Experience</p>
+                            </div>
+
+                            <div class="w-px h-12 bg-gray-300"></div>
+
+                            <div>
+                                <h3 class="text-3xl font-extrabold display-font">48<span class="text-[#ff735c]">+</span></h3>
+                                <p class="text-xs text-gray-500 mt-1">Projects Completed</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-visual relative">
+
+                        <div class="absolute -top-8 -right-4 w-32 h-32 bg-[#e8e1ff] rounded-full blur-2xl opacity-80"></div>
+
+                        <div class="relative bg-[#e9e3fa] rounded-[40px] p-5 sm:p-8 overflow-hidden">
+
+                            <div class="absolute top-10 right-10 w-20 h-20 border-[12px] border-[#ff735c] rounded-full rotating-shape opacity-80"></div>
+
+                            <div class="relative z-10 bg-white rounded-[28px] p-4 shadow-xl">
+
+                                <div class="flex justify-between items-center px-2 py-3">
+                                    <span class="font-bold text-sm">Creative Dashboard</span>
+                                    <span class="text-xs text-gray-400">Overview</span>
+                                </div>
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85"
+                                    alt="Colorful creative design workspace"
+                                    class="w-full h-72 object-cover rounded-2xl">
+
+                                <div class="grid grid-cols-2 gap-3 mt-4">
+
+                                    <div class="bg-[#f4f0ff] p-4 rounded-2xl">
+                                        <p class="text-xs text-gray-500">Design Quality</p>
+                                        <h3 class="text-2xl font-bold mt-1">98%</h3>
+                                    </div>
+
+                                    <div class="bg-[#fff0eb] p-4 rounded-2xl">
+                                        <p class="text-xs text-gray-500">User Experience</p>
+                                        <h3 class="text-2xl font-bold mt-1">Excellent</h3>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="float-card absolute -bottom-4 -left-4 sm:-left-8 bg-white shadow-xl rounded-2xl p-5 z-20">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-[#ff735c] rounded-xl flex items-center justify-center text-white text-xl">
+                                        ✦
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400">Creative Thinking</p>
+                                        <p class="font-bold text-sm">Always Curious</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SELECTED WORK -->
+        <section id="work" class="bg-white px-6 lg:px-16 py-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+
+                    <div>
+                        <p class="text-[#ff735c] text-xs font-bold uppercase tracking-[4px] mb-4">
+                            Selected Projects
+                        </p>
+
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                            Made with
+                            <span class="text-[#8d78cf]">purpose.</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-gray-500 max-w-sm leading-7">
+                        A collection of digital experiences built around
+                        real problems, thoughtful ideas and beautiful details.
+                    </p>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <article class="project-card bg-[#f4f0ff] rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden p-5 pb-0">
+                            <img
+                                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1100&q=85"
+                                alt="Mobile application interface design"
+                                class="project-image w-full h-72 object-cover rounded-2xl">
+                        </div>
+
+                        <div class="p-7 flex items-end justify-between">
+                            <div>
+                                <p class="text-xs text-[#8d78cf] font-bold uppercase tracking-widest mb-2">01 / Mobile App</p>
+                                <h3 class="text-2xl font-bold">Finora Finance</h3>
+                                <p class="text-sm text-gray-500 mt-2">Fintech · UI Design · UX Strategy</p>
+                            </div>
+
+                            <a href="#contact" class="round-button w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl">
+                                ↗
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card bg-[#fff0eb] rounded-[30px] overflow-hidden md:mt-20">
+
+                        <div class="overflow-hidden p-5 pb-0">
+                            <img
+                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=85"
+                                alt="Website analytics and interface design"
+                                class="project-image w-full h-72 object-cover rounded-2xl">
+                        </div>
+
+                        <div class="p-7 flex items-end justify-between">
+                            <div>
+                                <p class="text-xs text-[#ff735c] font-bold uppercase tracking-widest mb-2">02 / Web Platform</p>
+                                <h3 class="text-2xl font-bold">Orbit Analytics</h3>
+                                <p class="text-sm text-gray-500 mt-2">SaaS · Dashboard · Product Design</p>
+                            </div>
+
+                            <a href="#contact" class="round-button w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl">
+                                ↗
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card bg-[#edf4ef] rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden p-5 pb-0">
+                            <img
+                                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1100&q=85"
+                                alt="E-commerce shopping experience"
+                                class="project-image w-full h-72 object-cover rounded-2xl">
+                        </div>
+
+                        <div class="p-7 flex items-end justify-between">
+                            <div>
+                                <p class="text-xs text-[#55856a] font-bold uppercase tracking-widest mb-2">03 / E-Commerce</p>
+                                <h3 class="text-2xl font-bold">Forma Market</h3>
+                                <p class="text-sm text-gray-500 mt-2">E-commerce · UX Research · UI</p>
+                            </div>
+
+                            <a href="#contact" class="round-button w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl">
+                                ↗
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card bg-[#f4f0ff] rounded-[30px] overflow-hidden md:mt-20">
+
+                        <div class="overflow-hidden p-5 pb-0">
+                            <img
+                                src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1100&q=85"
+                                alt="Creative branding and interface project"
+                                class="project-image w-full h-72 object-cover rounded-2xl">
+                        </div>
+
+                        <div class="p-7 flex items-end justify-between">
+                            <div>
+                                <p class="text-xs text-[#8d78cf] font-bold uppercase tracking-widest mb-2">04 / Brand Experience</p>
+                                <h3 class="text-2xl font-bold">Studio Bloom</h3>
+                                <p class="text-sm text-gray-500 mt-2">Branding · Web Design · Art Direction</p>
+                            </div>
+
+                            <a href="#contact" class="round-button w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl">
+                                ↗
+                            </a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="px-6 lg:px-16 py-28">
+
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+                <div class="relative">
+
+                    <div class="bg-[#e8e1ff] rounded-[35px] p-5 sm:p-8">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+                            alt="Portrait of a creative designer"
+                            class="about-image w-full h-[470px] object-cover rounded-[25px]">
+
+                    </div>
+
+                    <div class="absolute -bottom-7 -right-3 sm:-right-8 bg-[#ff735c] text-white p-6 rounded-2xl shadow-lg">
+                        <p class="text-3xl font-extrabold display-font">06+</p>
+                        <p class="text-xs mt-1">Years of creativity</p>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-[#ff735c] text-xs font-bold uppercase tracking-[4px] mb-5">
+                        A Little About Me
+                    </p>
+
+                    <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
+                        Good design is
+                        <span class="text-[#8d78cf]">more than</span>
+                        just looks.
+                    </h2>
+
+                    <p class="text-gray-500 leading-8 mt-7">
+                        Hello, I'm Alex Morgan — a digital product designer
+                        who loves turning complex ideas into simple,
+                        engaging and useful experiences.
+                    </p>
+
+                    <p class="text-gray-500 leading-8 mt-4">
+                        My approach combines user research, visual storytelling
+                        and careful interaction design. I believe every small
+                        detail has the power to make a product feel special.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mt-9">
+
+                        <div>
+                            <h3 class="text-3xl font-extrabold display-font">24</h3>
+                            <p class="text-sm text-gray-500 mt-2">Happy Clients</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-3xl font-extrabold display-font">12</h3>
+                            <p class="text-sm text-gray-500 mt-2">Design Awards</p>
+                        </div>
+
+                    </div>
+
+                    <a href="#contact"
+                        class="round-button inline-flex items-center gap-3 bg-[#24232c] text-white px-8 py-4 rounded-full font-bold text-sm mt-10">
+                        More About Me
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+        <section id="services" class="bg-[#eeebf7] px-6 lg:px-16 py-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="max-w-2xl mb-14">
+
+                    <p class="text-[#8d78cf] text-xs font-bold uppercase tracking-[4px] mb-4">
+                        What I Do
+                    </p>
+
+                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+                        Turning ideas into
+                        <span class="text-[#ff735c]">experiences.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    <div class="service-card bg-white p-8 rounded-[25px]">
+
+                        <div class="w-14 h-14 rounded-2xl bg-[#f4f0ff] flex items-center justify-center text-2xl">
+                            ◈
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-7">UI Design</h3>
+
+                        <p class="text-gray-500 text-sm leading-7 mt-3">
+                            Clean, modern and visually engaging interfaces
+                            designed to make every interaction feel natural.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card bg-white p-8 rounded-[25px]">
+
+                        <div class="w-14 h-14 rounded-2xl bg-[#fff0eb] flex items-center justify-center text-2xl">
+                            ◎
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-7">UX Research</h3>
+
+                        <p class="text-gray-500 text-sm leading-7 mt-3">
+                            Understanding user needs through research,
+                            analysis and meaningful design decisions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card bg-white p-8 rounded-[25px]">
+
+                        <div class="w-14 h-14 rounded-2xl bg-[#edf4ef] flex items-center justify-center text-2xl">
+                            ✳
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-7">Prototyping</h3>
+
+                        <p class="text-gray-500 text-sm leading-7 mt-3">
+                            Interactive prototypes that bring concepts
+                            to life before development begins.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card bg-white p-8 rounded-[25px]">
+
+                        <div class="w-14 h-14 rounded-2xl bg-[#fff0eb] flex items-center justify-center text-2xl">
+                            ◉
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-7">Web Design</h3>
+
+                        <p class="text-gray-500 text-sm leading-7 mt-3">
+                            Responsive digital experiences built with
+                            a balance of beauty and usability.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card bg-white p-8 rounded-[25px]">
+
+                        <div class="w-14 h-14 rounded-2xl bg-[#f4f0ff] flex items-center justify-center text-2xl">
+                            ✦
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-7">Design Systems</h3>
+
+                        <p class="text-gray-500 text-sm leading-7 mt-3">
+                            Consistent visual systems that help brands
+                            grow and products stay organised.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card bg-white p-8 rounded-[25px]">
+
+                        <div class="w-14 h-14 rounded-2xl bg-[#edf4ef] flex items-center justify-center text-2xl">
+                            ↗
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-7">Brand Identity</h3>
+
+                        <p class="text-gray-500 text-sm leading-7 mt-3">
+                            Distinctive brand visuals that communicate
+                            personality, purpose and recognition.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+        <section class="bg-white px-6 lg:px-16 py-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="grid lg:grid-cols-2 gap-16">
+
+                    <div>
+                        <p class="text-[#ff735c] text-xs font-bold uppercase tracking-[4px] mb-5">
+                            My Approach
+                        </p>
+
+                        <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+                            A process built
+                            <span class="text-[#8d78cf]">around people.</span>
+                        </h2>
+
+                        <p class="text-gray-500 leading-8 mt-7 max-w-md">
+                            Every successful design starts with understanding.
+                            My process keeps people, purpose and simplicity
+                            at the centre of every decision.
+                        </p>
+                    </div>
+
+
+                    <div class="space-y-8">
+
+                        <div class="flex gap-6 border-b border-gray-200 pb-7">
+                            <span class="text-[#ff735c] font-bold text-sm">01</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Discover</h3>
+                                <p class="text-sm text-gray-500 mt-2 leading-7">
+                                    Research the audience, understand the challenge
+                                    and define the project direction.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 border-b border-gray-200 pb-7">
+                            <span class="text-[#ff735c] font-bold text-sm">02</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Explore</h3>
+                                <p class="text-sm text-gray-500 mt-2 leading-7">
+                                    Develop ideas, create wireframes and explore
+                                    different design possibilities.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 border-b border-gray-200 pb-7">
+                            <span class="text-[#ff735c] font-bold text-sm">03</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Create</h3>
+                                <p class="text-sm text-gray-500 mt-2 leading-7">
+                                    Turn the selected direction into a polished
+                                    and interactive digital experience.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <span class="text-[#ff735c] font-bold text-sm">04</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Refine</h3>
+                                <p class="text-sm text-gray-500 mt-2 leading-7">
+                                    Test, improve and prepare the final design
+                                    for a smooth development handoff.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT CTA -->
+        <section id="contact" class="px-6 lg:px-16 py-24">
+
+            <div class="max-w-7xl mx-auto bg-[#8d78cf] rounded-[35px] px-7 py-16 sm:p-16 text-white relative overflow-hidden">
+
+                <div class="absolute -right-20 -top-24 w-72 h-72 border-[35px] border-white/10 rounded-full"></div>
+                <div class="absolute -bottom-32 -left-16 w-80 h-80 bg-[#ff735c] rounded-full opacity-20 blur-3xl"></div>
+
+                <div class="relative z-10 max-w-3xl">
+
+                    <p class="text-white/70 text-xs font-bold uppercase tracking-[4px] mb-6">
+                        Have a Project in Mind?
+                    </p>
+
+                    <h2 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
+                        Let's create something meaningful.
+                    </h2>
+
+                    <p class="text-white/75 leading-8 mt-7 max-w-lg">
+                        Have an idea that deserves a great digital experience?
+                        Let's discuss how we can bring it to life.
+                    </p>
+
+                    <a href="mailto:hello@pixelora.design"
+                        class="round-button inline-flex items-center gap-4 bg-white text-[#24232c] px-9 py-4 rounded-full font-bold text-sm mt-10">
+                        Start a Conversation
+                        <span class="text-lg">↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#24232c] text-white px-6 lg:px-16 pt-16 pb-8">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid md:grid-cols-2 gap-12 pb-14 border-b border-white/15">
+
+                <div>
+                    <a href="#" class="text-3xl font-extrabold display-font">
+                        pixelora<span class="text-[#ff735c]">®</span>
+                    </a>
+
+                    <p class="text-gray-400 text-sm leading-7 max-w-sm mt-5">
+                        Designing digital experiences with purpose,
+                        personality and a little bit of magic.
+                    </p>
+                </div>
+
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+
+                    <div>
+                        <h4 class="font-bold text-sm mb-5">Explore</h4>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li><a href="#work" class="hover:text-[#ff735c] transition">My Work</a></li>
+                            <li><a href="#about" class="hover:text-[#ff735c] transition">About</a></li>
+                            <li><a href="#services" class="hover:text-[#ff735c] transition">Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-sm mb-5">Connect</h4>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li><a href="#contact" class="hover:text-[#ff735c] transition">Contact</a></li>
+                            <li><a href="mailto:hello@pixelora.design" class="hover:text-[#ff735c] transition">Email</a></li>
+                            <li><a href="#" class="hover:text-[#ff735c] transition">LinkedIn</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-sm mb-5">Social</h4>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-[#ff735c] transition">Instagram</a></li>
+                            <li><a href="#" class="hover:text-[#ff735c] transition">Behance</a></li>
+                            <li><a href="#" class="hover:text-[#ff735c] transition">Dribbble</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-7 text-xs text-gray-500">
+
+                <p>© 2026 PIXELORA®. All rights reserved.</p>
+
+                <p>Designed with intention. Built with creativity.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
